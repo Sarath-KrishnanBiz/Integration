@@ -31,7 +31,7 @@ export default function Campaigneditpage() {
     const [Error7, setError7] = useState("")
     const [Error, setError] = useState("")
     const [arrayData, setArrayData] = useState([]);
-    
+
     const handleclick = (e) => {
         setShow(!show)
         const url = "http://localhost:3000/dev/getsinglelead";
@@ -44,7 +44,7 @@ export default function Campaigneditpage() {
                 //     temp.isclicked = false
                 // }
                 setArrayData(res.data)
-                console.log("Array== "+ JSON.stringify(arrayData))
+                console.log("Array== " + JSON.stringify(arrayData))
             })
             .catch((err) => {
                 console.log("Error==>" + err);
@@ -89,7 +89,7 @@ export default function Campaigneditpage() {
                 if (result.includes("ParentCampaign  is mandatory")) {
                     setError6("ParentCampaign  is mandatory")
                 }
-                if(result.includes("updated")){
+                if (result.includes("updated")) {
                     setError7("Updated")
                 }
 
@@ -173,9 +173,10 @@ export default function Campaigneditpage() {
                                         <div className="form_inner1">
                                             {/* <label>Lead Details</label> */}
                                         </div>
+                                        <label className="Error7">{Error7}</label>
                                         <div className="form_inner3">
                                             <div className="form_inner31">
-                                            <label className="Error7">{Error7}</label>
+
                                                 <label className="text">CampaignName</label><br />
                                                 <input className="form_rectangle" type="text" placeholder="" value={CampaignName} onChange={(e) => { setCampaignName(e.target.value) }} />
                                                 {/* {Error && CampaignName == "" ? <label className="error">Campaign Name is mandatory</label>:""} */}
@@ -254,15 +255,15 @@ export default function Campaigneditpage() {
                                             </div>
                                         </div>
                                         <div className="checkList_outer_inner2">
-                                            <div className="checkList_inner2">
-                                                <input type={"checkbox"} className="checkBox" />
-                                                <label>Campaign One</label>
-                                            </div>
+                                            {/* <div className="checkList_inner2"> */}
+                                            {/* <input type={"checkbox"} className="checkBox" /> */}
+                                            {/* <label>Campaign One</label> */}
+                                            {/* </div> */}
                                             <div>
                                                 {/* {array.map((itm, indx) => {
                                                     return <List itm={itm} array={array} setArray={setArray} />;
                                                 })} */}
-                                                {   arrayData.map((item, index)=>{
+                                                {arrayData.map((item, index) => {
                                                     return <List item={item} arrayData={arrayData} setArrayData={setArrayData} />
                                                 })
                                                 }
@@ -306,7 +307,7 @@ function List(item, arrayData, setArrayData) {
     // //   }
     // }
     // setArrayData(temp)
-    console.log("item"+JSON.stringify(item))
+    console.log("item" + JSON.stringify(item))
     return (
         <>
             <div className="checkList_inner2">

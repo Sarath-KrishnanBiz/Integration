@@ -317,12 +317,15 @@
     color: rgb(157, 29, 29);
 }
 .checkList_outer{
-    background-color: rgb(252, 252, 252);
+    background-color: rgb(252, 252, 252,0.9);
     width: 35%;
     border-radius: 20px;
     position: absolute;
     margin-left: 10%;
     margin-top: 10%;
+    min-height:30vh;
+    max-height: 40vh;
+    /* filter: blur(2px); */
 }
 .checkList_inner1{
     display: flex;

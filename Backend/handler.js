@@ -331,7 +331,7 @@ module.exports.getleadlistwithfilter = async (event) => {
 module.exports.getsinglelead = async (event) => {
   let request = JSON.parse(event.body);
   // let id = request.id;
-  let sql = "select txtFirstName from tblleads group by txtFirstName;"
+  let sql = "select txtFirstName from tblleads where id between 1 and 5;"
   let result = await new Promise((resolve, reject) => {
     con.query(sql, function (err, result) {
       if (err) throw err;
