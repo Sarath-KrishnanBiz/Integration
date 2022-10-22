@@ -273,17 +273,7 @@ module.exports.leadfunnel = async (event) => {
   return result;
 }
 
-// module.exports.leadsfunnel = async (event) => {
-//   let sql = "select count(id) leadscount from crm.tblleads union all SELECT count(d.txtConversionType) as NoOfLeads FROM crm.tblleads a JOIN crm.tblleadcampaignmap b ON a.id = b.refLeadId JOIN crm.tblactivity c ON b.id = c.refMapid JOIN crm.tblconversiontype d ON c.refConversionStatus = d.id where d.txtConversionType = 'Nurturing' or d.txtConversionType = 'Prospect' group by d.txtConversionType;"
-//   let result = await new Promise((resolve, reject) => {
-//     con.query(sql, function (err, result) {
-//       if (err) throw err;
-//       console.log(JSON.stringify(result))
-//       resolve({ body: JSON.stringify(result) })
-//     })
-//   })
-//   return result;
-// };
+
 module.exports.prospectGrowth = async (event) => {
   let request = JSON.parse(event.body);
   let Conversiontype = request.Conversiontype;
@@ -479,7 +469,7 @@ module.exports.updateCampaign = async (event) => {
   let Status = request.Status;
   let Owner = request.Owner;
   let id = request.id;
-  let ParentCampaign = request.ParentCampaign
+  let ParentCampaign = request.ParentCampaign;
   let sql = "update tblcampaign set txtCampaignName='" + CampaignName + "',txtStatus='" + Status + "',dtStartdate='" + Startdate + "',dtEnddate='" + Enddate + "',txtOwner='" + Owner + "',txtParentCampaign='" + ParentCampaign + "'where id ='"+id+"'";
   let result = await new Promise((resolve, reject) => {
     if (CampaignName == "") {

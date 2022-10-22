@@ -73,21 +73,21 @@ export default function Campaigneditpage() {
                 console.log("Response==> " + JSON.stringify(res.data))
                 let result = res.data + ""
                 if (result.includes("CampaignName is mandatory"))
-                    setError1("CampaignName is mandatory")
+                    setError1("CampaignName is mandatory!!!")
                 if (result.includes("Startdate is mandatory")) {
-                    setError2("Startdate is mandatory")
+                    setError2("Startdate is mandatory!!!")
                 }
                 if (result.includes("Enddate  is mandatory")) {
-                    setError3("Enddate  is mandatory")
+                    setError3("Enddate  is mandatory!!!")
                 }
                 if (result.includes("Status  is mandatory")) {
-                    setError4("Status  is mandatory")
+                    setError4("Status  is mandatory!!!")
                 }
                 if (result.includes("Owner  is mandatory")) {
-                    setError5("Owner  is mandatory")
+                    setError5("Owner  is mandatory!!!")
                 }
                 if (result.includes("ParentCampaign  is mandatory")) {
-                    setError6("ParentCampaign  is mandatory")
+                    setError6("ParentCampaign  is mandatory!!!")
                 }
                 if (result.includes("updated")) {
                     setError7("Updated")
@@ -115,7 +115,6 @@ export default function Campaigneditpage() {
 
                 console.log(res.data[0])
                 if (res.data.length > 0) {
-                    //  console.log(res.data[0].txtParentCampaign)
                     setCampaignName(res.data[0].txtCampaignName)
                     setStartdate(res.data[0].dtStartdate)
                     setEnddate(res.data[0].dtEnddate)
@@ -153,10 +152,6 @@ export default function Campaigneditpage() {
                                             <label><b>Campaign One</b></label>
                                         </div>
                                         <div className="titlebar_top_col2">
-                                            {/* <div className="titlebar_top_col21"> */}
-                                            {/* <HiDownload className="titlebar_downloadIcon"/> */}
-                                            {/* <label>Bulk Import</label> */}
-                                            {/* </div> */}
                                             <div className="titlebar_top_col22">
                                                 <BsFillPlusCircleFill className="titlebar_plusIcon" />
                                                 <label onClick={(e) => {
@@ -179,7 +174,6 @@ export default function Campaigneditpage() {
 
                                                 <label className="text">CampaignName</label><br />
                                                 <input className="form_rectangle" type="text" placeholder="" value={CampaignName} onChange={(e) => { setCampaignName(e.target.value) }} />
-                                                {/* {Error && CampaignName == "" ? <label className="error">Campaign Name is mandatory</label>:""} */}
                                                 <label className="Err">{Error1}</label>
                                             </div>
 
@@ -248,7 +242,7 @@ export default function Campaigneditpage() {
                                         <div className="checkList_inner1">
                                             <div className="checkList_inner11">
                                                 <BiSearch className="checkList_searchIcon" />
-                                                <input type={"text"} placeholder="Search Campaign" />
+                                                <input type={"text"} placeholder="Search Lead" />
                                             </div>
                                             <div className="checkList_inner12">
                                                 <label>ADD</label>

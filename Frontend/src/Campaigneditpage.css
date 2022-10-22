@@ -100,7 +100,7 @@
 .titlebar_top_col1 label,
 .titlebar_top_col21 label{
     font-size: 14px;
-    color: rgba(125, 143, 177, 1);
+    color:#9fadc7;
     font-family: Arial, Helvetica, sans-serif;
 }
 .titlebar_top_col2{
@@ -118,7 +118,7 @@
     border: 1px solid #7C8AA5;
 }
 .titlebar_top_col22{
-    background-color: #9155FD;
+    background-color: #8833ff;
     width: 26%;
     display: flex;
     align-items: center;
@@ -159,7 +159,7 @@
   }
   .form_outer label {
     font-size: 17px;
-    color:#4D5E80;
+    color:#8798b9;
     
   } 
    .Err{
@@ -247,7 +247,7 @@
     padding: 15px;
     /* border: 1px solid rgb(28, 29, 28); */
     display: flex;
-    background-color: #9155FD;
+    background-color: #8833ff;
     justify-content: center;
     align-items: center;
     margin-left: 75%;
@@ -256,7 +256,7 @@
 }
 
 .Normallist_row1_button button {
-    background-color: #9155FD;
+    background-color: #8833ff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -270,7 +270,7 @@
     margin-left: 30px;
     padding-top: 65px;
     font-size: large;
-    color: rgb(93, 92, 92);
+    color: #7d8fb3;
 }
 
 .Normallist_row2 {
@@ -285,7 +285,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: gray;
+    color: #7d8fb3;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -304,7 +304,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: gray;
+    color:#7d8fb3;
 }
 
 .Normallist_row5 label {
@@ -321,10 +321,13 @@
     width: 35%;
     border-radius: 20px;
     position: absolute;
-    margin-left: 10%;
-    margin-top: 10%;
-    min-height:30vh;
-    max-height: 40vh;
+    margin-left: 5%;
+    margin-top: 8%;
+    padding: 10px;
+    min-height:50vh;
+    max-height: 50vh;
+    border:#7C8AA5;
+    box-shadow: 1px 1px 1px 2px #edebeb;
     /* filter: blur(2px); */
 }
 .checkList_inner1{
@@ -350,10 +353,11 @@
     font-size: 16px;
 }
 .checkList_inner12{
-    background-color: #9155FD;
+    background-color: #8833ff;
     color: rgba(255, 255, 255, 0.923);
-    padding: 8px 35px;
+    padding: 8px 30px;
     border-radius: 20px;
+    margin-left: 5px;
 }
 .checkList_inner2{
     padding: 15px 42px;
@@ -373,7 +377,7 @@
 }
 
 .Horizontalbar_main {
-    background-color: #fafafa;
+    background-color: #fafbfc;
     /* background-color: aqua; */
     min-width: 80%;
     margin-top: 50px;
@@ -394,7 +398,7 @@
 }
 
 .Horizontalbar_main_row1 label{
-    color: #4D5E80;
+    color: #6c7b9a;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -485,6 +489,6 @@
 }
 
 .Horizontalbar_graph label{
-    color: #4D5E80;
+    color:#6c7b9a;
     font-weight: bold;
 }
