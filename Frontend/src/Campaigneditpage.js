@@ -118,7 +118,7 @@ export default function Campaigneditpage() {
                     setError6("ParentCampaign  is mandatory!!!")
                 }
                 if (result.includes("updated")) {
-                    setError7("Updated")
+                    setError7("Updated!!!")
                 }
 
 
@@ -371,7 +371,7 @@ export default function Campaigneditpage() {
                                         <div className="form_inner1">
                                             {/* <label>Lead Details</label> */}
                                         </div>
-                                        <label className="Error7">{Error7}</label>
+                                        <label className="Error7"><b>{Error7}</b></label>
                                         <div className="form_inner3">
                                             <div className="form_inner31">
 
@@ -381,29 +381,29 @@ export default function Campaigneditpage() {
                                             </div>
 
                                             <div className="form_inner31">
-                                                <label>Parent Campaign</label><br />
+                                                <label className="text">Parent Campaign</label><br />
                                                 <input className="form_rectangle" type="text" placeholder="" value={ParentCampaign} onChange={(e) => { setParentCampaign(e.target.value) }} />
                                                 <label className="Err">{Error6}</label>
                                             </div>
                                             <div className="form_inner31">
-                                                <label>Status</label><br />
+                                                <label className="text">Status</label><br />
                                                 <input className="form_rectangle" type="text" placeholder="" value={Status} onChange={(e) => { setStatus(e.target.value) }} />
                                                 <label className="Err">{Error4}</label>
                                             </div>
                                         </div>
                                         <div className="form_inner3">
                                             <div className="form_inner31">
-                                                <label>Start Date</label><br />
+                                                <label className="text">Start Date</label><br />
                                                 <input className="form_rectangle" type="text" placeholder="" value={Startdate} onChange={(e) => { setStartdate(e.target.value) }} />
                                                 <label className="Err">{Error2}</label>
                                             </div>
                                             <div className="form_inner31">
-                                                <label>End Date</label><br />
+                                                <label className="text">End Date</label><br />
                                                 <input className="form_rectangle" type="text" placeholder="" value={Enddate} onChange={(e) => { setEnddate(e.target.value) }} />
                                                 <label className="Err">{Error3}</label>
                                             </div>
                                             <div className="form_inner31">
-                                                <label>Owner</label><br />
+                                                <label className="text">Owner</label><br />
                                                 <input className="form_rectangle" type="text" placeholder="" value={Owner} onChange={(e) => { setOwner(e.target.value) }} />
                                                 <label className="Err">{Error5}</label>
                                             </div>

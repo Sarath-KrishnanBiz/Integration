@@ -9,6 +9,13 @@ var con = mysql.createConnection({
   database: "bizcloud"
 });
 
+// var con = mysql.createConnection({
+//   host: "database-1.cw6qs6sqli81.us-east-1.rds.amazonaws.com",
+//   user: "admin",
+//   password: "sarathcloud",
+//   database: "bizcloud"
+// });
+
 con.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");

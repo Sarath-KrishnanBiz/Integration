@@ -164,30 +164,35 @@
   
 
   }
-  .form_outer label {
-    font-size: 17px;
-    color:#8798b9;
+  /* .form_outer label {
+   
     
-  } 
+  }  */
    .Err{
     padding-left: 20px;
     color: rgb(253, 5, 5);
-    font-size: 5px;
+    font-size: 10px;
     display: flex;
     position: absolute;
+    margin-top: 8px;
 } 
 .Error7{
-    padding-left: 20px;
-    color:RED;
-    font-size: 5px;
+    padding-left: 350px;
+    color:rgb(8, 179, 8);
+    font-size: 15px;
     display: flex;
+    justify-content: center;
     position: absolute;
-    margin-bottom:25px
+    margin-top :-50px;
 }
   .form_inner1 {
     padding: 5px 0px;
     padding-left: 10px;
 
+  }
+  .text{
+    font-size: 17px;
+    color:#8798b9;
   }
   .form_rectangle {
     background-color: white;
@@ -510,7 +515,7 @@
     font-weight: bold;
 }
 .Topbar_header{
-    background-color: #faf9f9;
+    background-color: #f3f3f4;
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -584,8 +589,6 @@
     background-color: white;
     margin-right: -29px;
     margin-top: 11px;
-    margin-left: 35px;
-    /* padding-left: 45px; */
 }
 .Topbar_col3 input{
     border: none;
@@ -594,7 +597,7 @@
     display: flex;
     flex-direction: row;
     justify-content:center;
-    padding-right: 10px;
+    padding-right: 20px;
     width: 170px;
     
 }
@@ -610,8 +613,7 @@
 }
 .Topbar_col4{
     padding-top: 5px;
-    /* margin-left: 35px; */
-    padding-left: 60px;
+    margin-left: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .Topbar_profileIcon{
@@ -649,6 +651,7 @@
     justify-content: space-around;
     margin-right: 200px;
     position: absolute;
+    padding-right: 100px;
 }
 .Topbar_content_cola{
     background-color: white;
@@ -737,6 +740,7 @@
 .Topbar_Company{
 margin-left: 10px;
 }
+
 .leftbar {
     min-height: 140vh;
     background-color: #faf9f9;
