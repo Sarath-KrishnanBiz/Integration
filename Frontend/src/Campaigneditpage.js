@@ -5,13 +5,14 @@ import Normallist from "./Components/Normallist";
 import TitleBar from "./Components/titlebar";
 import Topbar from "./Components/Topbar";
 import { FaRegCompass } from 'react-icons/fa';
+import { BsThreeDotsVertical } from "react-icons/bs";
 import {
-  
-  BsMessenger,
+
+    BsMessenger,
 
 } from "react-icons/bs";
 import {
-  AiTwotoneStar,
+    AiTwotoneStar,
 } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
@@ -48,6 +49,9 @@ export default function Campaigneditpage() {
     const [Error5, setError5] = useState("")
     const [Error6, setError6] = useState("")
     const [Error7, setError7] = useState("")
+    const [orangebar, setOrangebar] = useState([]);
+    const [greenbar, setGreenbar] = useState([]);
+    const [bluebar, setBluebar] = useState([]);
     const [Error, setError] = useState("")
     const [arrayData, setArrayData] = useState([]);
     const [arrayData1, setArrayData1] = useState([]);
@@ -169,6 +173,21 @@ export default function Campaigneditpage() {
             });
     }, [])
 
+    useEffect(() => {
+        const url = "http://localhost:3000/dev/leadfunnel";
+        const data = {};
+        const header = {};
+        axios.post(url, data, { Headers: header })
+            .then((res) => {
+                console.log("Response => " + (JSON.stringify(res.data[0].leadscount)) + (JSON.stringify(res.data[1].leadscount)) + (JSON.stringify(res.data[2].leadscount)))
+                setOrangebar(res.data[0].leadscount)
+                setGreenbar(res.data[1].leadscount)
+                setBluebar(res.data[2].leadscount)
+            })
+            .catch((err) => {
+                console.log("Error => " + err)
+            })
+    }, [])
 
     return (
         <>
@@ -340,7 +359,7 @@ export default function Campaigneditpage() {
                                                 <BsFillPlusCircleFill className="titlebar_plusIcon" />
                                                 <label onClick={(e) => {
                                                     Saveclick(e);
-                                                }} >Save</label>
+                                                }} ><b>SAVE</b></label>
                                             </div>
                                         </div>
                                     </div>
@@ -401,7 +420,7 @@ export default function Campaigneditpage() {
                                         <div className="Normallist_row1">
                                             <label className="Normallist_row1_label">Leads</label>
                                             <div className="Normallist_row1_button">
-                                                <button onClick={(e) => { handleclick(e) }} >ADD</button>
+                                                <button onClick={(e) => { handleclick(e) }} ><b>ADD</b></button>
                                             </div>
                                         </div>
                                         <div className="Normallist_row2"></div>
@@ -425,26 +444,28 @@ export default function Campaigneditpage() {
                             }
                             {
                                 show ? (
-                                    <div className="checkList_outer">
-                                        <div className="checkList_inner1">
-                                            <div className="checkList_inner11">
-                                                <BiSearch className="checkList_searchIcon" />
-                                                <input type={"text"} placeholder="Search Lead" />
+                                    <div className="BG">
+                                        <div className="checkList_outer">
+                                            <div className="checkList_inner1">
+                                                <div className="checkList_inner11">
+                                                    <BiSearch className="checkList_searchIcon" />
+                                                    <input type={"text"} placeholder="Search Lead" />
+                                                </div>
+                                                <div className="checkList_inner12">
+                                                    <label>ADD</label>
+                                                </div>
                                             </div>
-                                            <div className="checkList_inner12">
-                                                <label>ADD</label>
-                                            </div>
-                                        </div>
-                                        <div className="checkList_outer_inner2">
-                                            {/* <div className="checkList_inner2"> */}
-                                            {/* <input type={"checkbox"} className="checkBox" /> */}
-                                            {/* <label>Campaign One</label> */}
-                                            {/* </div> */}
-                                            <div>
-                                                {arrayData.map((item, index) => {
-                                                    return <List item={item} arrayData={arrayData} setArrayData={setArrayData} />
-                                                })
-                                                }
+                                            <div className="checkList_outer_inner2">
+                                                {/* <div className="checkList_inner2"> */}
+                                                {/* <input type={"checkbox"} className="checkBox" /> */}
+                                                {/* <label>Campaign One</label> */}
+                                                {/* </div> */}
+                                                <div>
+                                                    {arrayData.map((item, index) => {
+                                                        return <List item={item} arrayData={arrayData} setArrayData={setArrayData} />
+                                                    })
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -452,7 +473,32 @@ export default function Campaigneditpage() {
                                     <></>
                                 )}
                             <div className="Campaigneditpage_topbar2_right_2_right">
-                                <Horizontalbar />
+                                <div>
+                                <div className="Horizontalbar_main">
+                <div className="Horizontalbar_main_row1">
+                    <label>Leads Funnel</label>
+                    <div className="Horizontalbar_main_row1_icon">
+                        <BsThreeDotsVertical />
+                    </div>
+                </div>
+                <div className="Horizontalbar_graph" >
+                    <ul>
+                        <li>
+                            <label className="Horizontalbar_graph_orange_label">Leads</label>
+                            <div className="Horizontalbar_graph_orange" style={{ width: `${orangebar}%` }}></div>
+                        </li>
+                        <li>
+                            <label>Nurturing</label>
+                            <div className="Horizontalbar_graph_green" style={{ width: `${greenbar}%` }}></div>
+                        </li>
+                        <li>
+                            <label>Prospects</label>
+                            <div className="Horizontalbar_graph_blue" style={{ width: `${bluebar}%` }}></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                                </div>
                             </div>
                         </div>
 
