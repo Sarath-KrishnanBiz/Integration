@@ -31,6 +31,7 @@ export default function Campaigneditpage() {
     const [Error7, setError7] = useState("")
     const [Error, setError] = useState("")
     const [arrayData, setArrayData] = useState([]);
+    const [arrayData1, setArrayData1] = useState([]);
 
     const handleclick = (e) => {
         setShow(!show)
@@ -128,6 +129,21 @@ export default function Campaigneditpage() {
             .catch((err) => {
                 console.log("Response==> " + JSON.stringify(err))
             })
+    }, [])
+
+    useEffect(() => {
+        const url = "http://localhost:3000/dev/leadfetch";
+        const data = {};
+        const header = {};
+        axios.post(url, data, header,)
+            .then((res) => {
+                console.log("Response==>" + JSON.stringify(res.data))
+                setArrayData1(res.data)
+                console.log("Array== " + JSON.stringify(arrayData1))
+            })
+            .catch((err) => {
+                console.log("Error==>" + err);
+            });
     }, [])
 
 
@@ -228,9 +244,12 @@ export default function Campaigneditpage() {
                                             <label className="Normallist_row3_label4">Last Updated On</label>
                                         </div>
                                         <div className="Normallist_row4"></div>
-                                        <Table />
-                                        <Table />
-                                        <Table />
+                                        <div className="maptable">
+                                        {arrayData1.map((item1, index) => {
+                                                    return <Table item1={item1} arrayData1={arrayData1} setArrayData1={setArrayData1} />
+                                                })
+                                                }
+                                        </div>
                                     </div>
                                 </div>
                             </div>{
@@ -254,9 +273,6 @@ export default function Campaigneditpage() {
                                             {/* <label>Campaign One</label> */}
                                             {/* </div> */}
                                             <div>
-                                                {/* {array.map((itm, indx) => {
-                                                    return <List itm={itm} array={array} setArray={setArray} />;
-                                                })} */}
                                                 {arrayData.map((item, index) => {
                                                     return <List item={item} arrayData={arrayData} setArrayData={setArrayData} />
                                                 })
@@ -282,13 +298,14 @@ export default function Campaigneditpage() {
 }
 
 
-function Table() {
+function Table(item1,arrayData1,setArrayData1) {
+    // console.log("item" + JSON.stringify(item1))
     return <>
         <div className="Normallist_row5">
-            <label className="Normallist_row5_label1">John</label>
-            <label className="Normallist_row5_label2">Smith</label>
-            <label className="Normallist_row5_label3">Confirmed</label>
-            <label className="Normallist_row5_label4">2022-01-01</label>
+        <label>{item1.item1.txtFirstName}</label>
+        <label>{item1.item1.txtLastName}</label>
+        <label>{item1.item1.txtLeadsource}</label>
+        <label>{item1.item1.dtUpdatedOn}</label>
         </div>
     </>
 }

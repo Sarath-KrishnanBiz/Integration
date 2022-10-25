@@ -683,6 +683,30 @@ module.exports.resend = async (event) => {
 
 }
 
+
+module.exports.leadfetch = async (event) => {
+  let request = JSON.parse(event.body);
+  // let id = request.id;
+  let sql = "select txtFirstName,txtLastName,txtLeadsource,dtUpdatedOn from tblleads where id between 1 and 3;"
+  let result = await new Promise((resolve, reject) => {
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log(result);
+      if (result !== '') {
+        resolve({ body: JSON.stringify(result) })
+        return
+      }
+      else {
+        reject(" Task does not Exist")
+        return
+      }
+
+    });
+  })
+  return result;
+}
+
+
 // module.exports.campaginfetch = async (event) => {
 //   let request = JSON.parse(event.body);
 //   let id = request.id;

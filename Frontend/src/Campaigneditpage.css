@@ -360,7 +360,7 @@
     margin-left: 5px;
 }
 .checkList_inner2{
-    padding: 15px 42px;
+    padding: 10px 42px;
     display: flex;
     align-items: center;
 }
@@ -375,6 +375,9 @@
 .checkList_outer_inner2{
     padding-bottom: 15px;
 }
+/* .maptable{
+
+} */
 
 .Horizontalbar_main {
     background-color: #fafbfc;

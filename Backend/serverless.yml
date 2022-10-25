@@ -245,6 +245,12 @@ functions:
      - http:
         method: post
         path: resend
+  leadfetch:
+    handler: handler.leadfetch
+    events:
+     - http:
+        method: post
+        path: leadfetch
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
