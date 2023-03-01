@@ -1,0 +1,26 @@
+let employees = [
+    {
+        id:1,
+        firstname:"sarath",
+        lastname:"krishnan",
+        age:22,
+        addrress : {
+            city:"Thrissur",
+            state:"kerala",
+        },
+        skills:["python","ML"],
+    },
+    {
+     id:2,
+        firstname:"dhanya",
+        lastname:"venugopal",
+        age:22,
+        addrress : {
+            city:"wadakkanchery",
+            state:"kerala",
+        },
+        skills:["botany","plant"],   
+    },
+    ];
+    
+console.log(employees[1].skills);
